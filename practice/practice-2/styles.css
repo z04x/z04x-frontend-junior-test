@@ -12,6 +12,7 @@
 .page__error-message{
     display: none;
     text-align: center;
+    color: red;
     font-size: 24px;
 }
 

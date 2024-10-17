@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Posts Table</title>
+</head>
+<body>
+    <div class="page">
+        <input type="text" class="page__search-input" placeholder="Search posts...">
+        <table class="table">
+            <thead class="table__header">
+                <tr>
+                    <th class="table__header-cell sortable" data-sort="userId" data-label="User ID">User ID</th>
+                    <th class="table__header-cell sortable" data-sort="id" data-label="Post ID">ID</th>
+                    <th class="table__header-cell sortable" data-sort="title" data-label="Title">Title</th>
+                    <th class="table__header-cell sortable" data-sort="body" data-label="Body">Body</th>
+                </tr>
+            </thead>
+            <tbody class="table__body">
+                <!-- Данные поступят суда -->
+            </tbody>
+        </table>
+        <div class="page__error-message"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
