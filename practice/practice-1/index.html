@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Модальная форма партнера</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <button class="button button-action-open-modal" aria-haspopup="dialog">Открыть форму</button>
+
+    <div class="modal" id="partnerModal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+        <div class="modal__container">
+            <h2 class="modal__title" id="modalTitle">Стать партнёром проекта</h2>
+            
+            <form class="form" id="partnerForm" novalidate>
+                <div class="form__necessary-info">    
+                    <div class="form__necessary-info-inputs" id="necessaryInfoInputs"></div>
+                    <div class="form__field form__field-type-avatar">
+                        <label for="avatarInput" class="form__label form__label-type-avatar">
+                            <span class="form__required-mark" aria-hidden="true">✱</span> Логотип (jpeg, png)
+                        </label>
+                        <label class="form__avatar">
+                            <input type="file" class="form__avatar-input" accept="image/jpeg,image/png" id="avatarInput" name="avatar" required aria-required="true">
+                            <div class="form__avatar-placeholder">
+                                <img src="assets/icons/download-foto.svg" alt="" class="form__avatar-placeholder-icon" aria-hidden="true">
+                                <p class="form__avatar-placeholder-text">Выберите файл</p>
+                            </div>
+                            <img class="form__avatar-preview" id="avatarPreview" alt="Предпросмотр аватара">
+                            <div class="form__avatar-remove" id="avatarRemove" title="Удалить изображение" role="button" tabindex="0"></div>
+                        </label>
+                        <div class="form__error" aria-live="polite"></div>
+                    </div>
+                </div>
+                <div class="form__social-links" id="socialLinks"></div>
+                
+                <button type="submit" class="button button-type-submit" disabled>Стать партнёром проекта</button>
+            </form>
+            
+            <button class="button button-action-cancel-modal">Отменить</button>
+        </div>
+    </div>
+
+    <script src="scripts/main.js" type="module"></script>
+</body>
+</html>

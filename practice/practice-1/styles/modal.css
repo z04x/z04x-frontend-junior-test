@@ -1,0 +1,80 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--modal-background);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal_opened {
+    display: flex;
+    animation: fadeIn var(--transition-duration);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal__container {
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    padding: 53px 97px;
+    overflow: auto;
+    width: 90%;
+    height: 90%;
+    max-width: 754px;
+    position: relative;
+    animation: slideIn var(--transition-duration);
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal__title {
+    font-size: 24px;
+    margin-bottom: 32px;
+    color: var(--text-color);
+}
+
+/* Стили для скроллбара */
+.modal__container::-webkit-scrollbar {
+    width: 2px;
+}
+
+.modal__container::-webkit-scrollbar-track {
+    background: #997c7c;
+    border-radius: 1px;
+}
+
+.modal__container::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 1px;
+}
+
+.modal__container {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) #997c7c;
+}
+
+.modal__container {
+    -ms-overflow-style: none;
+}
+
+@media (max-width: 668px) {
+    .modal__container {
+        padding: 24px;
+    }
+
+    .modal__title {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+}

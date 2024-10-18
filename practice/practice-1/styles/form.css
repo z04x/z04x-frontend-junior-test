@@ -1,0 +1,261 @@
+.form__field {
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.form__necessary-info {
+    display: flex;
+    gap: 24px;
+    width: auto;
+}   
+
+.form__necessary-info-inputs {
+    width: 100%;
+} 
+
+.form__error {
+    display: none;
+    color: var(--error-color);
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.form__input-wrapper {
+    position: relative;
+    height: var(--input-height);
+}
+
+.form__input,
+.form__select {
+    width: 100%;
+    height: 100%;
+    padding: 20px 16px 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: all var(--transition-duration);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.form__select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23333333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.form__select::-ms-expand {
+    display: none;
+}
+
+.form__select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.2);
+}
+
+.form__select option {
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.form__select option:first-child {
+    color: var(--placeholder-color);
+}
+
+.form__select:invalid {
+    color: var(--placeholder-color);
+}
+
+/* Стили для кастомной стрелки при наведении и фокусе */
+.form__select:hover,
+.form__select:focus {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%230066cc' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+}
+
+/* Анимация при открытии/закрытии списка */
+.form__select {
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-image 0.2s ease-in-out;
+}
+
+/* Стили для открытого состояния (работает только в некоторых браузерах) */
+.form__select:focus {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.form__input-error,
+.form__select-error {
+    border-color: var(--error-color);
+}
+
+.form__input-error ~ .form__label,
+.form__select-error ~ .form__label {
+    color: var(--error-color);
+}
+
+.form__input-error + .form__error,
+.form__select-error + .form__error {
+    display: block;
+}
+
+.form__label {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: var(--placeholder-color);
+    transition: all var(--transition-duration) ease;
+    pointer-events: none;
+    font-size: 16px;
+    padding: 0 4px;
+}
+
+.form__input:focus,
+.form__input:not(:placeholder-shown),
+.form__select:focus,
+.form__select:not(:invalid) {
+    border-color: var(--primary-color);
+    outline: none;
+    padding-top: 20px;
+}
+
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown) ~ .form__label,
+.form__select:focus ~ .form__label,
+.form__select:not(:invalid) ~ .form__label {
+    top: 30%;
+    font-size: 16px;
+    color: var(--primary-color);
+}
+
+/* Avatar styles */
+.form__field-type-avatar .form__label-type-avatar {
+    display: contents;
+}
+
+.form__label-type-avatar {
+    font-weight: bold;
+    text-align: center;
+    line-height: 2;
+    font-size: 14px;
+    color: var(--placeholder-color);
+}
+
+.form__avatar {
+    width: 175px;
+    height: 175px;
+    min-width: 175px;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__avatar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000;
+    opacity: 0.5;
+    z-index: 0;
+    border-radius: 50%;
+}
+
+.form__avatar-input {
+    display: none;
+}
+
+.form__avatar-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.form__avatar-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-image: url('assets/icons/download-foto.svg');  
+    z-index: 1;
+}
+
+.form__avatar-placeholder-text {
+    font-size: 14px;
+    color: var(--background-color);
+    text-align: center;
+    text-wrap: nowrap;
+    text-decoration: underline;
+}
+
+.form__avatar-remove {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    width: 36px;
+    height: 36px;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.form__avatar-remove::before,
+.form__avatar-remove::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    background-color: var(--placeholder-color);
+}
+
+.form__avatar-remove::before {
+    transform: rotate(45deg);
+}
+
+.form__avatar-remove::after {
+    transform: rotate(-45deg);
+}
+
+.form__avatar-remove:hover {
+    background-color: var(--background-color);
+}
+
+/* Social links styles */
+.form__social-field {
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.form__social-input {
+    padding-left: 20px;
+}
+
+.form__social-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}

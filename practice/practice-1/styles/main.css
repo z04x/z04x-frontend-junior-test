@@ -1,0 +1,55 @@
+@import 'modal.css';
+@import 'form.css';
+@import 'button.css';
+
+:root {
+    --primary-color: #E91E63;
+    --error-color: #E91E63;
+    --text-color: #333;
+    --chanel-color: #0848C0;
+    --border-color: #E0E0E0;
+    --placeholder-color: #757575;
+    --background-color: #fff;
+    --modal-background: rgba(0, 0, 0, 0.5);
+    --input-height: 56px;
+    --border-radius: 8px;
+    --transition-duration: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form__required-mark {
+    color: var(--error-color);
+    margin-left: 4px;
+}
+
+/* Responsive */
+@media (max-width: 668px) {
+    .form__necessary-info {
+        flex-direction: column-reverse;
+        gap: 0px;
+    }   
+
+    .modal__container {
+        margin: 16px;
+        padding: 24px;
+    }
+
+    .modal__title {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+}
